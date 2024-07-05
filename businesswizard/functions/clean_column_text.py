@@ -1,7 +1,7 @@
 import pandas as pd
 import pandas_flavor as pf
 import re
-
+from typing import List, Dict
 
 def __lower_text(df, c):
     return [str(x).lower() for x in df[c]]
@@ -18,8 +18,8 @@ def __proper_text(df, c):
 @pf.register_dataframe_method
 def clean_column_text(
         df: pd.DataFrame,
-        columns_to_transform: str | list,
-        transformations_dictionary: dict = None,
+        columns_to_transform: str | List[str],
+        transformations_dictionary: Dict[str] = None,
         remove_special_characters: bool = False,
         use_regex: bool = False,
         change_case: str = None
