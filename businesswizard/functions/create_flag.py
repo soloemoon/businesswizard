@@ -1,16 +1,16 @@
 import pandas as pd
 import pandas_flavor as pf
-
+from typing import List
 
 @pf.register_dataframe_method
 def create_flag(
     df: pd.DataFrame,
     lookup_column: str,
-    lookup_list: list,
+    lookup_list: List[str],
     flag_column_name: str = 'created_flag_column',
     value_in_flag_mapping: str = 'Y',
     value_not_in_flag_mapping: str = 'N'
-)-> pd.DataFrame:
+) -> pd.DataFrame:
     '''
     Create a flag column in a dataframe based on list values
 
