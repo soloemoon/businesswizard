@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 
 def __business_day_calc(
-    start_date: str, 
+    start_date: str,
     end_date: str
 ):
     '''
@@ -68,7 +68,7 @@ def date_diff(
 
     # Day Calculation and Assignment
     if calculation in ['day', 'd', 'days']:
-        calendar_diff_list = [(x-y).days for x,y in zip(end_list, start_list)]
+        calendar_diff_list = [(x - y).days for x, y in zip(end_list, start_list)]
         business_day_diff_list = [__business_day_calc(x, y) for x, y in zip(start_list, end_list)]
 
         # Assign day calcylation output to columns
