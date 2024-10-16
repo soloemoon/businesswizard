@@ -1,11 +1,12 @@
 import pandas as pd
 import pandas_flavor as pf
+from typing import List
 
 
 @pf.register_dataframe_method
 def add_leading_zero(
     df: pd.DataFrame,
-    column_name: str | list,
+    column_name: str | List[str],
     character_length: int = 10
 ) -> pd.DataFrame:
     '''
@@ -25,5 +26,5 @@ def add_leading_zero(
         Dataframe with leading zeroes added to the desired columns
     '''
     for c in column_name:
-        df[c] = df[c].astype(str).str.zfill(character_length) 
+        df[c] = df[c].astype(str).str.zfill(character_length)
     return df
