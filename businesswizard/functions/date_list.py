@@ -1,5 +1,6 @@
 import pandas as pd
 from datetime import datetime, timedelta
+import pydoc
 
 def __date_range_calc(
     start_date, 
@@ -58,5 +59,7 @@ def create_date_list(
     if output_months == True:
        date_list = __month_output(date_list, date_format)
     else:
-        date_list = [x.strftime(date_format) for x in date_list if remove_weekends==True else date_list]
+        date_list = [ x.strftime(date_format) for x in date_list if remove_weekends==True ]
     return date_list
+
+pydoc.writedoc('create_date_list')

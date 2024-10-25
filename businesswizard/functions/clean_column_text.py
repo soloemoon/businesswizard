@@ -2,6 +2,7 @@ import pandas as pd
 import pandas_flavor as pf
 import re
 from typing import List, Dict
+import pydoc
 
 def __lower_text(df, c):
     return [str(x).lower() for x in df[c]]
@@ -61,3 +62,5 @@ def clean_column_text(
         df[c] = df[c].str.strip()
     
     return df
+
+pydoc.writedoc('clean_column_text')

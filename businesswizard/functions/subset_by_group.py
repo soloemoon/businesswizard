@@ -2,6 +2,7 @@ import pandas as pd
 import pandas_flavor as pf
 
 from typing import List
+import pydoc
 
 @pf.register_dataframe_method
 def subset_by_group(
@@ -26,4 +27,6 @@ def subset_by_group(
     """
 
     return dict(iter(df.groupby(column_name)))
+
+pydoc.writedoc('subset_by_group')
 

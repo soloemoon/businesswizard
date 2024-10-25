@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import pandas_flavor as pf
 from datetime import datetime, timedelta
+import pydoc
 
 
 def __business_day_calc(
@@ -84,3 +85,5 @@ def date_diff(
         year_diff_list = [(x.year - y.year) for x, y in zip(end_list, start_list)]
         df['date_diff_years'] = year_diff_list
     return df
+
+pydoc.writedoc('date_diff')

@@ -1,6 +1,7 @@
 import pandas as pd
 import pandas_flavor as pf
 from typing import List
+import pydoc
 
 @pf.register_dataframe_method
 def create_flag(
@@ -45,3 +46,5 @@ def create_flag(
     df[flag_column_name] = df[lookup_column].isin(lookup_list).map(mapping_dict)
 
     return df
+
+pydoc.writedoc('create_flag')

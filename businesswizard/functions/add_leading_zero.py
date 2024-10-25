@@ -1,6 +1,7 @@
 import pandas as pd
 import pandas_flavor as pf
 from typing import List
+import pydoc
 
 
 @pf.register_dataframe_method
@@ -28,3 +29,5 @@ def add_leading_zero(
     for c in column_name:
         df[c] = df[c].astype(str).str.zfill(character_length)
     return df
+
+pydoc.writedoc('add_leading_zero')

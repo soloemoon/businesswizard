@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import pandas_flavor as pf
 from typing import List
+import pydoc
 
 
 @pf.register_dataframe_method
@@ -39,3 +40,5 @@ def group_concat(
                
     result = df.groupby(group_column, as_index=False).agg(col_dict)
     return result
+
+pydoc.writedoc('group_concat')

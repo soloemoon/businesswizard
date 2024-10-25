@@ -1,0 +1,29 @@
+[build-system]
+requires = ['setuptools']
+build-backend = 'setuptools.build_meta'
+
+
+[project]
+name = "BusinessWizard"
+version = "0.0.1"
+authors = [
+  { name="Solomon Moon", email="soloemoon@gmail.com" },
+]
+description = "Package to help make business life a little easier"
+readme = "README.md"
+requires-python = ">=3.11"
+keywords = ['business', 'businesswizard', 'helper', 'wizard']
+license = {text = 'LICENSE'}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ['pandas', 'numpy', 'pyjanitor', 'polars', 'datetime', 'python-dateutil']
+
+[project.urls]
+Homepage = "https://github.com/soloemoon/businesswizard"
+Issues = "https://github.com/soloemoon/businesswizard/issues"
+
+[tool.setuptools.packages]
+find = {}
